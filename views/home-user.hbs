@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Express Retake Exam January 2019</title>
-    <link href="../static/css/site.css" type="text/css" rel="stylesheet">
+    <link href="../../static/css/site.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -17,7 +17,7 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home </a>
+                    <a class="nav-link" href="/">Home </a>
                 </li>
 
                 <li class="nav-item">
@@ -26,14 +26,6 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="#">Logout</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
                 </li>
 
             </ul>
@@ -46,7 +38,7 @@
         <main>
             <h1 class="text-center">Courses</h1>
             <section>
-                <a href="/course/create" class="btn btn-warning ">Create Course</a>
+                <a href="/createCourse" class="btn btn-warning ">Create Course</a>
                 <form class="search float-right">
                     <label>Search: </label>
                     <input type="text">
@@ -65,7 +57,7 @@
                                 <h4 class="card-title">ExpressJS</h4>
                             </div>
                             <div class="card-footer">
-                                <a href=""><button type="button" class="btn btn-info">Details</button></a>
+                                <a href="/courseDetails"><button type="button" class="btn btn-info">Details</button></a>
                                 <small class="float-right">Date...</small>
                             </div>
                         </div>
@@ -78,7 +70,7 @@
                                 <h4 class="card-title">Angular</h4>
                             </div>
                             <div class="card-footer">
-                                <a href=""><button type="button" class="btn btn-info">Details</button></a>
+                                <a href="/courseDetails"><button type="button" class="btn btn-info">Details</button></a>
                                 <small class="float-right">Date...</small>
                             </div>
                         </div>
@@ -91,7 +83,7 @@
                                 <h4 class="card-title">React</h4>
                             </div>
                             <div class="card-footer">
-                                <a href=""><button type="button" class="btn btn-info">Details</button></a>
+                                <a href="/courseDetails"><button type="button" class="btn btn-info">Details</button></a>
                                 <small class="float-right">Date...</small>
                             </div>
                         </div>
