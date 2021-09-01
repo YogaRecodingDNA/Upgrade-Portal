@@ -12,8 +12,7 @@ module.exports = (app) => {
             extname: 'hbs',
             defaultLayout: '',
             layoutsDir: __dirname + '/views',
-        })
-    );
+        }));
         
     app.use(bodyParser.urlencoded({ extended: true }));
 
