@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Express Retake Exam January 2019</title>
-    <link href="../../static/css/site.css" type="text/css" rel="stylesheet">
+    <link href="/css/site.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -21,35 +21,36 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Welcome, {{username}}</a>
+                    <a class="nav-link" href="#">Welcome, {{#with user}}{{username}}{{/with}}</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" href="/logout">Logout</a>
                 </li>
 
             </ul>
         </nav>
-
+        {{#if notification}}
         <section class="notifications">
-            <p class="notification-message">Message...</p>
+            <p class="notification-message">{{notification}}</p>
         </section>
-
+        {{/if}}
         <main>
-            <form class="text-center border border-light p-5" action="" method="POST">
+            {{#with course}}
+            <form class="text-center border border-light p-5" action="/editCourse/{{_id}}" method="POST">
     <h1>Edit Course</h1>
     <div class="form-group">
         <label for="title">Course Title</label>
-        <input type="text" class="form-control" placeholder="Course name" value="" name="title">
+        <input type="text" class="form-control" placeholder="Course name" value="{{title}}" name="title">
     </div>
     <div class="form-group">
         <label for="description">Course Description</label>
-        <textarea class="form-control" placeholder="Description" name="description"></textarea>
+        <textarea class="form-control" placeholder="Description" name="description">{{description}}</textarea>
     </div>
     <div class="form-group">
         <label for="imageUrl">Image url</label>
         <input type="text" class="form-control" placeholder="Image Url"
-            value="" name="imageUrl">
+            value="{{imageUrl}}" name="imageUrl">
     </div>
     <div class="form-check">
         <input type="checkbox" class="form-check-input" id="check-box" name="isPublic">
@@ -57,6 +58,7 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+{{/with}}
         </main>
 
         <footer class="page-footer font-small">
